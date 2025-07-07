@@ -39,6 +39,25 @@ public class SimpleSentence implements Sentence {
     private String text = "Hallo, das ist ein einfacher Satz.";
 
     /**
+     * Creates a SimpleSentence with the default text.
+     * This constructor initializes the sentence with a preset example text.
+     */
+    public SimpleSentence() {
+        // Uses the default value already set in the field
+    }
+
+    /**
+     * Creates a SimpleSentence with the given text.
+     * This constructor allows you to specify the sentence text directly.
+     * If {@code text} is {@code null}, the sentence text will be set to {@code null}.
+     *
+     * @param text The sentence text to be used
+     */
+    public SimpleSentence(String text) {
+        this.text = text;
+    }
+
+    /**
      * Converts a Prose object into a Sentence object.
      * This static factory method creates a new SimpleSentence instance
      * containing the text from the provided Prose object.
@@ -48,23 +67,6 @@ public class SimpleSentence implements Sentence {
      * @throws NullPointerException if the provided Prose object is null
      * @see de.htw_berlin.fb4.ossd.prose.Prose#get()
      */
-
-public SimpleSentence() {
-// Uses the default value already set in the field
-} /**
-     * Constructs a SimpleSentence with the given text.
-     *
-     * @param text The sentence text to be used
-     */
- public SimpleSentence(String text) {
-        this.text = text;
-    }
-
-    /**
-     * Converts a Prose object into a Sentence object.
-     * ...
-     */
-
     public static Sentence toSentence(Prose prose) {
         SimpleSentence sentence = new SimpleSentence();
         sentence.text = prose.get();
